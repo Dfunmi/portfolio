@@ -29,7 +29,7 @@ function Hero() {
         <h2>FullStack Developer</h2>
         <span>
           <a href="https://x.com/funmiowolabi2"target='_blank'><img src={twitterIcon} alt="Twitter Icon" /></a>
-          <a href="https://linkedin.com/"target='_blank'><img src={linkedInIcon} alt="LinkedIn Icon" /></a>
+          <a href="https://linkedin.com/in/oluwafunmilayoowolabi"target='_blank'><img src={linkedInIcon} alt="LinkedIn Icon" /></a>
           <a href="https://github.com/Dfunmi"target='_blank'><img src={githubIcon} alt="Github Icon" /></a>
         </span>
         <p className={styles.description}>Motivated Full Stack Developer focusing on MERN stack (MongoDB, Express, React, Node.js). </p>

@@ -7,10 +7,10 @@ function Project() {
     <section id='projects' className={styles.container}>
       <h1 className='sectionTitle'>Projects</h1>
       <div className={styles.projectsContainer}>
-      <ProjectCard src={logo} link="https://github.com/Dfunmi/job-listings-react" h3='React' p='Job Listings'/>
-      <ProjectCard src={logo} link="https://github.com/Dfunmi/job-listings-react" h3='Placeholder' p='Placeholder project1'/>
+      <ProjectCard src={logo} link="https://github.com/Dfunmi/job-listings-react" h3='Job Listings' p='React'/>
+      {/* <ProjectCard src={logo} link="https://github.com/Dfunmi/job-listings-react" h3='Placeholder' p='Placeholder project1'/>
       <ProjectCard src={logo} link="https://github.com/Dfunmi/job-listings-react" h3='Placeholder' p='Placeholder Project2'/>
-      <ProjectCard src={logo} link="https://github.com/Dfunmi/job-listings-react" h3='Placeholder' p='placeholder Project3'/>
+      <ProjectCard src={logo} link="https://github.com/Dfunmi/job-listings-react" h3='Placeholder' p='placeholder Project3'/> */}
       </div>
     </section>
   )
