@@ -10,7 +10,7 @@ export const siteConfig = {
   title: "Oluwafunmilayo Owolabi — Frontend Developer",
   description:
     "Frontend developer with 3+ years of experience building clean, responsive web interfaces with React, Next.js, and Tailwind CSS.",
-  url: "https://example.com",
+  url: "https://portfolio-op3k.vercel.app/",
   resumeUrl: "/resume.pdf",
   /** Inferred from the +234 phone country code — not stated explicitly anywhere; update to your exact city if you'd like. */
   location: "Nigeria",
