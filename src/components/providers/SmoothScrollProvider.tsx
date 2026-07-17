@@ -9,6 +9,8 @@ const NAVBAR_OFFSET = 64; // matches the fixed Navbar's height (h-16)
 interface LenisContextValue {
   /** Pauses/resumes Lenis — use while a mobile menu or modal is open so it can't scroll underneath. */
   setPaused: (paused: boolean) => void;
+  /** Scrolls the page back to the top smoothly. */
+  scrollToTop: () => void;
 }
 
 const LenisContext = createContext<LenisContextValue | null>(null);
@@ -16,7 +18,7 @@ const LenisContext = createContext<LenisContextValue | null>(null);
 /** Access to pause/resume smooth scrolling, e.g. while a mobile menu is open. No-ops safely if Lenis isn't active (reduced motion). */
 export function useLenisControls(): LenisContextValue {
   const context = useContext(LenisContext);
-  return context ?? { setPaused: () => {} };
+  return context ?? { setPaused: () => {}, scrollToTop: () => window.scrollTo({ top: 0, behavior: "smooth" }) };
 }
 
 export function SmoothScrollProvider({ children }: WithChildren) {
@@ -74,5 +76,14 @@ export function SmoothScrollProvider({ children }: WithChildren) {
     }
   }, []);
 
-  return <LenisContext.Provider value={{ setPaused }}>{children}</LenisContext.Provider>;
+  const scrollToTop = useCallback(() => {
+    if (lenisRef.current) {
+      lenisRef.current.scrollTo(0, { offset: 0 });
+      return;
+    }
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
+  return <LenisContext.Provider value={{ setPaused, scrollToTop }}>{children}</LenisContext.Provider>;
 }

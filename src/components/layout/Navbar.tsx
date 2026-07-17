@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, type MouseEvent } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
@@ -20,7 +20,7 @@ import { cn } from "@/lib/utils";
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { setPaused } = useLenisControls();
+  const { setPaused, scrollToTop } = useLenisControls();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 8);
@@ -40,6 +40,17 @@ export function Navbar() {
     };
   }, [isMenuOpen, setPaused]);
 
+  function handleBrandClick(event: MouseEvent<HTMLAnchorElement>) {
+    if (window.location.pathname === "/") {
+      event.preventDefault();
+      setIsMenuOpen(false);
+      scrollToTop();
+      return;
+    }
+
+    setIsMenuOpen(false);
+  }
+
   return (
     <header
       className={cn(
@@ -56,6 +67,7 @@ export function Navbar() {
         >
           <Link
             href="/"
+            onClick={handleBrandClick}
             className="font-mono text-sm font-medium tracking-tight text-foreground"
           >
             {siteConfig.author.name}
