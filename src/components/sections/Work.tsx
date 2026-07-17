@@ -42,7 +42,7 @@ const projects: Project[] = [
     {
     title: "Ucomeafrik Tours",
     description:
-      "Contributed features to a West Africa tour operator's marketing site: email capture, a public reviews page, UI updates, and SEO work.",
+      "Contributed features to a West Africa tour operator's marketing site — email capture, a public reviews page, UI updates, and SEO work.",
     categories: ["Next.js", "Landing Pages", "UI"],
     technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Brevo"],
     problem:
@@ -51,7 +51,8 @@ const projects: Project[] = [
     liveUrl: "https://ucomeafrik.com/",
     badge: { label: "Client Contribution", variant: "neutral" },
   },
-{
+
+  {
   title: "Evans Travel & Tours",
   description:
     "Contributed to a West Africa tour operator's site: email notifications, tour package pages, destination pages, and the contact page.",
@@ -63,6 +64,7 @@ const projects: Project[] = [
   liveUrl: "https://www.evans-tours.com/en",
   badge: { label: "Client Contribution", variant: "neutral" },
 },
+
 ];
 
 function ProjectCard({ project }: { project: Project }) {
